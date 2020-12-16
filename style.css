@@ -80,14 +80,6 @@ p.text-display {
   border: 1px solid rgba(128, 122, 218, 0.185);
 }
 
-.item-location .card-main {
-  padding: 9.5px;
-}
-
-.item-location .main-description {
-  font-size: 23px;
-}
-
 .card-header {
   text-align: center;
   font-size: 12px;
