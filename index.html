@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>What's the Keycode?</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<canvas width="128" height="128" hidden></canvas>
+<div class="display">
+    <table class="table hide">
+        <thead>
+            <tr>
+                <th>Key Code</th>
+                <th>Key</th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+        </tbody>
+    </table>
+    <div class="wrap">
+        <p class="keycode-display"></p>
+        <p class="text-display">Press any key to get the JavaScript event keycode</p>
+        <div class="cards">
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>event.key</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">key</div>
+                </div>
+            </div>
+            <div class="card item-which">
+                <div class="card-header">
+                    <p>event.which</p>
+                </div>
+                <div class="card-event-which">
+                    <div class="main-description">which</div>
+                </div>
+            </div>
+            <div class="card item-code">
+                <div class="card-header">
+                    <p>event.code</p>
+                </div>
+                <div class="card-event-code">
+                    <div class="main-description">code</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    //Event Listeners
+    $("body").keyup(function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == `${event.keyCode}`) {
+            $(".card-event-key").html(`<p> ${event.key} </p>`);
+            $(".card-event-which").html(`<p> ${event.which} </p>`);
+            $(".card-event-code").html(`<p> ${event.code} </p>`)
+        }
+    });
+
+    createTable();
+
+</script>
+</body>
+
+</html>
